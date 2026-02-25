@@ -92,10 +92,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <h5 className={styles["product-name"]}>{product.productName}</h5>
       </NavLink>
       <div className={styles["card-body"]}>
-        {/* Modified: Render size selection only if sizes are available */}
-        {product.sizes && product.sizes.length > 0 && (
+        {product.sizes && product.sizes.length > 0 ? (
           <div className={styles.sizes}>
-            <span>Size:</span>
+            <span className={styles["size-label"]}>Size:</span>
             {product.sizes.map((size) => (
               <label key={generateId(size)} htmlFor={generateId(size)}>
                 <input
@@ -107,6 +106,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 {size}
               </label>
             ))}
+          </div>
+        ) : (
+          <div className={styles.sizes}>
+            <span className={styles["size-label"]}>Size:</span>
+            <span className={styles["one-size"]}>One Size</span>
           </div>
         )}
         <p className={styles["product-price"]}>

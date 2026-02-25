@@ -132,12 +132,11 @@ const ProductDetails: React.FC = () => {
               )}
             </p>
             <div className="product-options">
-              {product.sizes.length > 0 && (
-                <div className="sizes">
-                  <span>Size:</span>
-                  {product.sizes.map((size) => (
+              <div className="sizes">
+                <span className="size-label">Size:</span>
+                {product.sizes.length > 0 ? (
+                  product.sizes.map((size) => (
                     <label key={size} htmlFor={`size-${size.toLowerCase()}`}>
-                      {size}
                       <input
                         type="radio"
                         id={`size-${size.toLowerCase()}`}
@@ -145,10 +144,13 @@ const ProductDetails: React.FC = () => {
                         value={size}
                         onChange={(e) => setSelectedSize(e.target.value)}
                       />
+                      {size}
                     </label>
-                  ))}
-                </div>
-              )}
+                  ))
+                ) : (
+                  <span className="one-size">One Size</span>
+                )}
+              </div>
               <div className="quantity">
                 <span>Quantity:</span>
                 <select id="quantity-select" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))}>

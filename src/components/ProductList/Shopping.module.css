@@ -1,23 +1,54 @@
 /* Shopping.module.css */
-/* Classifier 111*/
+
+/* Filter bar */
 .filterBar {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 80px;
+  gap: 24px;
+  padding: 14px 20px;
+  background-color: #f5f7fa;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filterLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #5b7493;
+  white-space: nowrap;
 }
 
 .dropdown {
   background-color: #ffffff;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
+  color: #333;
+  border: 1.5px solid #d1d9e0;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.dropdown:hover {
+  border-color: #5b7493;
+}
+
+.dropdown:focus {
+  outline: none;
+  border-color: #5b7493;
+  box-shadow: 0 0 0 2px rgba(91, 116, 147, 0.15);
 }
 
 .options {
   background-color: #ffffff;
-  border: none;
   color: #333;
-  padding: 10px;
-  margin-right: 10px;
+  padding: 6px;
 }
 
 /* Container for product cards 222*/
@@ -57,40 +88,101 @@
   flex-grow: 1;
 }
 
-.sizes,
-.product-price {
-  margin-bottom: 8px;
-  align-items: flex-end;
-}
-
-/* Product name */
-a .product-name {
-  color: black !important;
-  text-decoration: none !important;
-  font-size: 1.2rem;
-}
-
-/* Product price location */
-.product-price {
+/* Size selector row */
+.sizes {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   margin-bottom: 10px;
+}
+
+/* "Size:" label */
+.size-label {
+  font-size: 0.85rem;
+  color: #666;
+  margin-right: 2px;
+}
+
+/* S / M / L buttons */
+.sizes label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sizes label:hover {
+  border-color: #5b7493;
+  color: #5b7493;
+}
+
+.sizes input[type="radio"] {
+  display: none;
+}
+
+.sizes label:has(input:checked) {
+  background-color: #5b7493;
+  border-color: #5b7493;
+  color: #fff;
+}
+
+/* One Size badge — same height as S/M/L buttons */
+.one-size {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #999;
+  cursor: default;
+}
+
+/* Product name link */
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-name {
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 10px;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.card a:hover .product-name {
+  color: #5b7493;
+  text-decoration: underline;
+}
+
+/* Price */
+.product-price {
+  align-self: flex-end;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
 }
 
 .discount-price {
-  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .original-price {
   color: red;
   text-decoration: line-through;
-}
-
-/* Align sizes and price to the right */
-.sizes,
-.product-price {
-  align-self: flex-end;
-  margin-bottom: 8px;
-  align-items: end;
-  font-size: 1.1rem;
 }
 
 /* Add to cart button */
@@ -99,12 +191,6 @@ a .product-name {
   border: none;
   color: #ffffff;
   font-size: 1.2rem;
-}
-
-/* Original price */
-.original-price {
-  color: red;
-  text-decoration: line-through;
 }
 
 /* Notification */

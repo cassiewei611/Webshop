@@ -62,13 +62,14 @@ body {
 }
 
 .price .original-price {
+    color: red;
     text-decoration: line-through;
     margin-right: 10px;
 }
 
 .price .current-price {
-    font-weight: bold;
-    color: #9B8D8C;
+    font-weight: 600;
+    color: #333;
 }
 
 .product-options {
@@ -81,18 +82,48 @@ body {
 .sizes {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
 }
 
-.sizes>span {
-    margin-right: 10px;
+.size-label {
+    font-size: 0.85rem;
+    color: #666;
+    margin-right: 2px;
 }
 
 .sizes label {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s ease;
     margin: 0;
+}
+
+.sizes label:hover {
+    border-color: #5b7493;
+    color: #5b7493;
+}
+
+.one-size {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    padding: 0 12px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #999;
+    cursor: default;
 }
 
 ul li {
@@ -110,7 +141,13 @@ ul li {
 }
 
 .sizes input[type="radio"] {
-    margin-right: 5px;
+    display: none;
+}
+
+.sizes label:has(input:checked) {
+    background-color: #5b7493;
+    border-color: #5b7493;
+    color: #fff;
 }
 
 .product-features {

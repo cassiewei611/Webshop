@@ -37,7 +37,8 @@ const CategoryFilter: React.FC<{ onCategoryChange: (category: string) => void; }
   }, []);
 
   return (
-    <div>
+    <div className={styles.filterGroup}>
+      <span className={styles.filterLabel}>Category:</span>
       {error && <p className={styles.error}>{error}</p>}
       <select
         onChange={(e) =>
@@ -92,7 +93,8 @@ const PriceFilter: React.FC<{
   }, []);
 
   return (
-    <div>
+    <div className={styles.filterGroup}>
+      <span className={styles.filterLabel}>Price:</span>
       {error && <p className={styles.error}>{error}</p>}
       <select
         onChange={(e) =>

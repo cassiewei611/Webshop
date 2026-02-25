@@ -1,22 +1,27 @@
+.navbar {
+    background-color: #5b7493;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: #d9e2ec;
+}
+
 .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
     display: block;
     margin-top: 0;
 }
 
-.navbar-brand,
-.navbar-nav .nav-link {
-    color: #5B7493;
+.navbar-brand {
+    font-family: 'Futura';
+    font-weight: 600;
 }
 
-.navbar-brand:hover,
-.navbar-nav .nav-link:hover {
-    color: #2f4561;
-}
-
-/* .dropdown-toggle {
-    color: #5B7493;
-} */
-
-.navbar-brand{
-font-family: 'Futura';
+.dropdown-toggle {
+    color: #ffffff;
 }
